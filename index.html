@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Harsh — Automation Engineer · Python & AI Workflows</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CURSOR FOLLOWER -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- CANVAS PARTICLE BG -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar" id="navbar">
+            <a href="#home" class="logo">H<span class="logo-dot">.</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-item" data-text="Home">Home</a></li>
+                <li><a href="#about" class="nav-item" data-text="About">About</a></li>
+                <li><a href="#projects" class="nav-item" data-text="Projects">Projects</a></li>
+                <li><a href="#contact" class="nav-item" data-text="Contact">Contact</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+        <div class="hero-grid-overlay"></div>
+
+        <div class="hero-content" id="heroContent">
+            <h1 class="hero-title">
+                <span class="line reveal-line">Making machines</span>
+                <span class="line reveal-line delay-1">do the <em class="glitch-text" data-text="boring work">boring work</em></span>
+            </h1>
+            <p class="hero-sub reveal-fade">
+                I build clean, practical automation tools that solve real problems<br>and reduce manual effort — Python, AI, APIs.
+            </p>
+            <div class="hero-buttons reveal-fade delay-2">
+                <a href="#projects" class="btn btn-primary">
+                    <span>View Projects</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#about" class="btn btn-ghost">
+                    <span>About Me</span>
+                </a>
+            </div>
+            <div class="hero-stats reveal-fade delay-3">
+                <div class="stat"><strong>3+</strong><span>Projects shipped</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat"><strong>Python</strong><span>Primary stack</span></div>
+                <div class="stat-divider"></div>
+                <div class="stat"><strong>Automation</strong><span>Focus</span></div>
+            </div>
+        </div>
+
+        <div class="scroll-hint">
+            <div class="scroll-line"></div>
+            <span>scroll</span>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-label reveal-up">About</div>
+            <div class="about-layout">
+                <div class="about-left reveal-up">
+                    <h2 class="section-title">
+                        Focused builder,<br><span class="text-accent">not a generalist</span>
+                    </h2>
+                    <div class="about-avatar">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-core">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-right reveal-up delay-1">
+                    <p>
+                        I'm <strong class="highlight">Harsh</strong>, based in Ahmedabad — focused on building <strong class="highlight">practical automation tools</strong> instead of chasing ten different directions at once.
+                    </p>
+                    <p>
+                        I work mostly with <strong>Python, Selenium, and APIs</strong> — creating tools that actually solve real problems. My core focus is simple: <span class="text-glow">build logical, efficient, and easy-to-use automation systems</span> using AI, but driven by my own problem-solving approach.
+                    </p>
+                    <p>
+                        I prefer clean, direct logic over complexity. Systems that are practical and actually usable — not just impressive-looking.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tag">Python</span>
+                        <span class="tag">Selenium</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">APIs</span>
+                        <span class="tag">Automation</span>
+                        <span class="tag">Web Scraping</span>
+                        <span class="tag">Flutter</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-label reveal-up">Work</div>
+            <h2 class="section-title reveal-up">Tools I've <span class="text-accent">built</span></h2>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card reveal-up" data-modal="modal1">
+                    <div class="card-inner">
+                        <div class="card-number">01</div>
+                        <div class="card-top">
+                            <div class="card-icon-wrap">
+                                <i class="fas fa-images"></i>
+                            </div>
+                            <span class="card-category">Data Collection</span>
+                        </div>
+                        <h3>Image Scraping System</h3>
+                        <p>Structured image collection pipeline for large-scale data harvesting — clean, organized, and ready for analysis.</p>
+                        <div class="card-tags">
+                            <span>Python</span><span>Selenium</span><span>Requests</span><span>BeautifulSoup</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="explore-btn">Explore case <i class="fas fa-arrow-up-right-from-square"></i></span>
+                        </div>
+                    </div>
+                    <div class="card-shine"></div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card reveal-up delay-1" data-modal="modal2">
+                    <div class="card-inner">
+                        <div class="card-number">02</div>
+                        <div class="card-top">
+                            <div class="card-icon-wrap">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <span class="card-category">Web App</span>
+                        </div>
+                        <h3>Gym Admin Dashboard</h3>
+                        <p>Member management system tracking memberships, attendance, and payment data with clean UI and practical backend.</p>
+                        <div class="card-tags">
+                            <span>Flutter</span><span>Supabase</span><span>PostgreSQL</span><span>Provider</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="explore-btn">Explore case <i class="fas fa-arrow-up-right-from-square"></i></span>
+                        </div>
+                    </div>
+                    <div class="card-shine"></div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card reveal-up delay-2" data-modal="modal3">
+                    <div class="card-inner">
+                        <div class="card-number">03</div>
+                        <div class="card-top">
+                            <div class="card-icon-wrap">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <span class="card-category">Automation Tool</span>
+                        </div>
+                        <h3>Restaurant Automation</h3>
+                        <p>Desktop tool to extract menus, scrape descriptions, and generate full-page PDFs from Zomato and Swiggy automatically.</p>
+                        <div class="card-tags">
+                            <span>Python</span><span>Selenium</span><span>Desktop App</span><span>PDF</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="explore-btn">Explore case <i class="fas fa-arrow-up-right-from-square"></i></span>
+                        </div>
+                    </div>
+                    <div class="card-shine"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODALS -->
+    <div id="modal1" class="modal" role="dialog" aria-modal="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close"><i class="fas fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fas fa-images"></i></div>
+                <div class="modal-meta">
+                    <span class="modal-tag">Data Collection</span>
+                    <h2>Food Image Scraper</h2>
+                </div>
+            </div>
+            <div class="modal-badges">
+                <span>Python</span><span>Selenium</span><span>Requests</span><span>BeautifulSoup</span>
+            </div>
+            <div class="modal-body">
+                <p>A high-performance scraper for extracting food images from Swiggy and Zomato using both API and DOM methods.</p>
+                <h3>Key Features</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Multi-threaded scraping &amp; downloading</li>
+                    <li><i class="fas fa-check"></i> Smart filtering — ignores logos, banners, and duplicates</li>
+                    <li><i class="fas fa-check"></i> Automatic image validation &amp; resizing</li>
+                    <li><i class="fas fa-check"></i> Organized folder structure with reports</li>
+                    <li><i class="fas fa-check"></i> Optional PDF generation per restaurant</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal" role="dialog" aria-modal="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close"><i class="fas fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fas fa-dumbbell"></i></div>
+                <div class="modal-meta">
+                    <span class="modal-tag">Web App</span>
+                    <h2>Gym Admin Dashboard (FitFlex)</h2>
+                </div>
+            </div>
+            <div class="modal-badges">
+                <span>Flutter</span><span>Supabase</span><span>Provider</span><span>PostgreSQL</span>
+            </div>
+            <div class="modal-body">
+                <p>A modern gym management system designed to handle members, payments, and attendance efficiently. Built with a scalable backend and clean UI to simplify daily gym operations.</p>
+                <h3>Key Features</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Member management — add, edit, delete, plan tracking</li>
+                    <li><i class="fas fa-check"></i> Attendance system with daily check-ins</li>
+                    <li><i class="fas fa-check"></i> Payment tracking with history</li>
+                    <li><i class="fas fa-check"></i> Automatic membership expiry &amp; status handling</li>
+                    <li><i class="fas fa-check"></i> Dashboard with real-time stats</li>
+                    <li><i class="fas fa-check"></i> CSV import directly via Supabase</li>
+                </ul>
+                <h3>Technical Details</h3>
+                <p>Built using Flutter for cross-platform (Web + APK) support. Backend powered by Supabase with PostgreSQL, including triggers for membership expiry and status updates. State management handled using Provider.</p>
+                <h3>Impact</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Eliminates manual member tracking</li>
+                    <li><i class="fas fa-check"></i> Centralized system for gym operations</li>
+                    <li><i class="fas fa-check"></i> Faster data handling and reporting</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal" role="dialog" aria-modal="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close"><i class="fas fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fas fa-robot"></i></div>
+                <div class="modal-meta">
+                    <span class="modal-tag">Automation Tool</span>
+                    <h2>Restaurant Automation Tool</h2>
+                </div>
+            </div>
+            <div class="modal-badges">
+                <span>Python</span><span>Selenium</span><span>Automation</span><span>Desktop App</span>
+            </div>
+            <div class="modal-body">
+                <p>A desktop automation tool designed to extract and process restaurant data from Zomato and Swiggy. It automates menu scraping, description extraction, and full-page PDF generation with accurate layout rendering.</p>
+                <h3>Key Features</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Zomato menu scraping with clean descriptions export (CSV)</li>
+                    <li><i class="fas fa-check"></i> Swiggy and Zomato full-page PDF generation</li>
+                    <li><i class="fas fa-check"></i> Automatic scrolling and lazy-load handling</li>
+                    <li><i class="fas fa-check"></i> Fixes layout issues like sticky headers &amp; overlapping content</li>
+                    <li><i class="fas fa-check"></i> Batch processing for faster workflow</li>
+                </ul>
+                <h3>Technical Details</h3>
+                <p>Built using Python with Selenium for browser automation. Handles dynamic web content, lazy loading, and UI rendering issues to generate accurate outputs. Includes custom driver management and optimized scripts for speed and stability.</p>
+                <h3>Why This Matters</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Eliminates manual data collection from food platforms</li>
+                    <li><i class="fas fa-check"></i> Ensures consistent and clean output formats</li>
+                    <li><i class="fas fa-check"></i> Handles complex dynamic pages automatically</li>
+                    <li><i class="fas fa-check"></i> Saves significant time for restaurant data processing</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact">
+        <div class="contact-orb"></div>
+        <div class="container">
+            <div class="section-label reveal-up">Contact</div>
+            <h2 class="section-title reveal-up">Let's <span class="text-accent">connect</span></h2>
+            <p class="contact-sub reveal-up">You can connect with me here.</p>
+
+            <div class="contact-card reveal-up">
+                <a href="mailto:harshgaming0958@gmail.com" class="contact-email">
+                    <i class="fas fa-envelope"></i>
+                    <span>harshgaming0958@gmail.com</span>
+                    <i class="fas fa-arrow-right arrow-icon"></i>
+                </a>
+                <div class="contact-divider"></div>
+                <div class="social-row">
+                    <a href="#" class="social-btn" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="#" class="social-btn" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="#" class="social-btn" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="location-tag reveal-up">
+                <i class="fas fa-location-dot"></i>
+                Ahmedabad, India
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <span class="footer-logo">H<span>.</span></span>
+            <p>© 2026 Harsh — Automation Engineer</p>
+            <span class="footer-made">Built with precision</span>
+        </div>
+    </footer>
+
+    <script>
+    /* ─── CURSOR ─── */
+    const dot = document.querySelector('.cursor-dot');
+    const ring = document.querySelector('.cursor-ring');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+
+    document.addEventListener('mousemove', e => {
+        mx = e.clientX; my = e.clientY;
+        dot.style.transform = `translate(${mx}px,${my}px)`;
+    });
+
+    function animateCursor() {
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        ring.style.transform = `translate(${rx}px,${ry}px)`;
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    document.querySelectorAll('a,button,.project-card,.tag,.social-btn').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
+    });
+
+    /* ─── PARTICLES ─── */
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    class Particle {
+        constructor() { this.reset(); }
+        reset() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 1.2 + 0.3;
+            this.speedX = (Math.random() - 0.5) * 0.3;
+            this.speedY = (Math.random() - 0.5) * 0.3;
+            this.opacity = Math.random() * 0.5 + 0.1;
+            this.hue = Math.random() > 0.5 ? 200 : 270;
+        }
+        update() {
+            this.x += this.speedX; this.y += this.speedY;
+            if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = `hsla(${this.hue}, 80%, 70%, ${this.opacity})`;
+            ctx.fill();
+        }
+    }
+
+    for (let i = 0; i < 120; i++) particles.push(new Particle());
+
+    function drawParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => { p.update(); p.draw(); });
+        // connect nearby
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const dist = Math.sqrt(dx*dx+dy*dy);
+                if (dist < 100) {
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.strokeStyle = `rgba(99,179,237,${0.08 * (1 - dist/100)})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.stroke();
+                }
+            }
+        }
+        requestAnimationFrame(drawParticles);
+    }
+    drawParticles();
+
+    /* ─── NAVBAR ─── */
+    const navbar = document.getElementById('navbar');
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    mobileToggle.addEventListener('click', () => {
+        mobileToggle.classList.toggle('open');
+        navLinks.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.nav-item').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileToggle.classList.remove('open');
+            navLinks.classList.remove('open');
+        });
+    });
+
+    /* ─── SMOOTH SCROLL ─── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+        });
+    });
+
+    /* ─── SCROLL REVEAL ─── */
+    const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                revealObs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal-up, .reveal-fade').forEach(el => revealObs.observe(el));
+
+    /* ─── HERO ENTRANCE ─── */
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            document.getElementById('heroContent').classList.add('loaded');
+        }, 100);
+    });
+
+    /* ─── CARD TILT ─── */
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const r = card.getBoundingClientRect();
+            const x = ((e.clientX - r.left) / r.width - 0.5) * 14;
+            const y = ((e.clientY - r.top) / r.height - 0.5) * -14;
+            card.style.transform = `rotateX(${y}deg) rotateY(${x}deg) translateY(-8px)`;
+            const shine = card.querySelector('.card-shine');
+            shine.style.background = `radial-gradient(circle at ${e.clientX - r.left}px ${e.clientY - r.top}px, rgba(255,255,255,0.07), transparent 70%)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
+
+    /* ─── MODALS ─── */
+    const modals = document.querySelectorAll('.modal');
+
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const id = card.getAttribute('data-modal');
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    document.querySelectorAll('.modal-close, .modal-backdrop').forEach(el => {
+        el.addEventListener('click', () => {
+            el.closest('.modal').classList.remove('open');
+            document.body.style.overflow = '';
+        });
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            modals.forEach(m => m.classList.remove('open'));
+            document.body.style.overflow = '';
+        }
+    });
+
+    /* ─── GLITCH TEXT ─── */
+    const glitch = document.querySelector('.glitch-text');
+    if (glitch) {
+        setInterval(() => {
+            glitch.classList.add('glitching');
+            setTimeout(() => glitch.classList.remove('glitching'), 300);
+        }, 4000);
+    }
+
+    /* ─── ACTIVE NAV ─── */
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-item');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(s => {
+            if (window.scrollY >= s.offsetTop - 120) current = s.id;
+        });
+        navItems.forEach(a => {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+        });
+    });
+    </script>
+</body>
+</html>
