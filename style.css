@@ -1058,6 +1058,7 @@ footer p {
 @media (max-width: 768px) {
     .navbar { padding: 18px 24px; }
     .navbar.scrolled { padding: 14px 24px; }
+    .logo { font-size: 1.4rem; }
 
     .nav-links {
         position: fixed;
@@ -1093,15 +1094,31 @@ footer p {
 }
 
 @media (max-width: 520px) {
-    .hero-title { font-size: 2.4rem; }
+    .hero-title { font-size: clamp(1.8rem, 7vw, 2.4rem); }
     .hero-buttons { flex-direction: column; align-items: center; }
     .btn { width: 100%; max-width: 280px; justify-content: center; }
     .container { padding: 0 20px; }
     .hero { padding: 120px 20px 80px; }
     .about, .projects, .contact { padding: 90px 0; }
-    .modal-content { padding: 24px 18px; }
+    .modal-content { max-height: 92vh; border-radius: 20px 20px 0 0; }
     .modal-meta h2 { font-size: 1.3rem; }
     .social-row { gap: 0; }
     .social-btn span { display: none; }
     .social-btn { padding: 12px 18px; }
+    .hero-stats { flex-wrap: wrap; gap: 14px; }
+    .stat-divider { display: none; }
+    .modal { padding: 12px; align-items: flex-end; }
+    .contact-card { margin: 0 12px 40px; }
+    .contact-email { font-size: 0.85rem; padding: 16px 16px; }
+    .section-title { font-size: clamp(1.7rem, 6vw, 2.2rem); margin-bottom: 32px; }
+}
+
+@media (max-width: 380px) {
+    .hero-tag { font-size: 0.7rem; padding: 6px 14px; }
+    .hero-sub { font-size: 0.9rem; }
+    .btn { padding: 12px 24px; font-size: 0.88rem; }
+    .card-inner { padding: 24px 20px; }
+    .card-inner h3 { font-size: 1.2rem; }
+    .footer-inner { padding: 0 16px; }
+    .location-tag { font-size: 0.75rem; }
 }

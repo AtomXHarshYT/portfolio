@@ -7,6 +7,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .cursor-dot {
+            position: fixed; top: 0; left: 0; width: 8px; height: 8px;
+            background: #63b3ed; border-radius: 50%; pointer-events: none;
+            z-index: 9999; transform: translate(-50%, -50%);
+        }
+        .cursor-ring {
+            position: fixed; top: 0; left: 0; width: 36px; height: 36px;
+            border: 1.5px solid rgba(99,179,237,0.6); border-radius: 50%;
+            pointer-events: none; z-index: 9998; transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, border-color 0.3s;
+        }
+        .cursor-ring.hovered { width: 52px; height: 52px; border-color: #63b3ed; }
+        .navbar { padding-left: max(24px, env(safe-area-inset-left)); padding-right: max(24px, env(safe-area-inset-right)); }
+        footer { padding-bottom: max(32px, env(safe-area-inset-bottom)); }
+    </style>
 </head>
 <body>
 
@@ -48,7 +64,7 @@
                 <span class="line reveal-line delay-1">do the <em class="glitch-text" data-text="boring work">boring work</em></span>
             </h1>
             <p class="hero-sub reveal-fade">
-                I build clean, practical automation tools that solve real problems<br>and reduce manual effort — Python, AI, APIs.
+                I build clean, practical automation tools that solve real problems and reduce manual effort — Python, AI, APIs.
             </p>
             <div class="hero-buttons reveal-fade delay-2">
                 <a href="#projects" class="btn btn-primary">
@@ -399,7 +415,8 @@
         }
     }
 
-    for (let i = 0; i < 120; i++) particles.push(new Particle());
+    const particleCount = window.innerWidth < 768 ? 40 : 120;
+    for (let i = 0; i < particleCount; i++) particles.push(new Particle());
 
     function drawParticles() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -473,19 +490,22 @@
     });
 
     /* ─── CARD TILT ─── */
-    document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const r = card.getBoundingClientRect();
-            const x = ((e.clientX - r.left) / r.width - 0.5) * 14;
-            const y = ((e.clientY - r.top) / r.height - 0.5) * -14;
-            card.style.transform = `rotateX(${y}deg) rotateY(${x}deg) translateY(-8px)`;
-            const shine = card.querySelector('.card-shine');
-            shine.style.background = `radial-gradient(circle at ${e.clientX - r.left}px ${e.clientY - r.top}px, rgba(255,255,255,0.07), transparent 70%)`;
+    const isTouchDevice = window.matchMedia('(hover: none)').matches;
+    if (!isTouchDevice) {
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const r = card.getBoundingClientRect();
+                const x = ((e.clientX - r.left) / r.width - 0.5) * 14;
+                const y = ((e.clientY - r.top) / r.height - 0.5) * -14;
+                card.style.transform = `rotateX(${y}deg) rotateY(${x}deg) translateY(-8px)`;
+                const shine = card.querySelector('.card-shine');
+                shine.style.background = `radial-gradient(circle at ${e.clientX - r.left}px ${e.clientY - r.top}px, rgba(255,255,255,0.07), transparent 70%)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
         });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-        });
-    });
+    }
 
     /* ─── MODALS ─── */
     const modals = document.querySelectorAll('.modal');
@@ -497,6 +517,8 @@
             if (modal) {
                 modal.classList.add('open');
                 document.body.style.overflow = 'hidden';
+                document.body.style.position = 'fixed';
+                document.body.style.width = '100%';
             }
         });
     });
@@ -505,6 +527,8 @@
         el.addEventListener('click', () => {
             el.closest('.modal').classList.remove('open');
             document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
         });
     });
 
@@ -512,6 +536,8 @@
         if (e.key === 'Escape') {
             modals.forEach(m => m.classList.remove('open'));
             document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
         }
     });
 
