@@ -216,6 +216,18 @@
                     <li><i class="fas fa-check"></i> Optional PDF generation per restaurant</li>
                 </ul>
             </div>
+            <div class="modal-screenshots">
+                <div class="screenshots-label">Screenshots</div>
+                <div class="screenshots-slider">
+                    <div class="ss-track" id="ss-track-1">
+                        <img src="screenshots/imagescrapp1.png" alt="Screenshot 1" class="ss-img">
+                        <img src="screenshots/imagescrapp2.png" alt="Screenshot 2" class="ss-img">
+                    </div>
+                    <button class="ss-prev" onclick="slideScreenshot('ss-track-1',-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button class="ss-next" onclick="slideScreenshot('ss-track-1', 1)"><i class="fas fa-chevron-right"></i></button>
+                    <div class="ss-dots" id="ss-dots-1"></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -252,6 +264,18 @@
                     <li><i class="fas fa-check"></i> Centralized system for gym operations</li>
                     <li><i class="fas fa-check"></i> Faster data handling and reporting</li>
                 </ul>
+            </div>
+            <div class="modal-screenshots">
+                <div class="screenshots-label">Screenshots</div>
+                <div class="screenshots-slider">
+                    <div class="ss-track" id="ss-track-2">
+                        <img src="screenshots/gym1.png" alt="Screenshot 1" class="ss-img">
+                        <img src="screenshots/gym2.png" alt="Screenshot 2" class="ss-img">
+                    </div>
+                    <button class="ss-prev" onclick="slideScreenshot('ss-track-2',-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button class="ss-next" onclick="slideScreenshot('ss-track-2', 1)"><i class="fas fa-chevron-right"></i></button>
+                    <div class="ss-dots" id="ss-dots-2"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -290,6 +314,18 @@
                     <li><i class="fas fa-check"></i> Saves significant time for restaurant data processing</li>
                 </ul>
             </div>
+            <div class="modal-screenshots">
+                <div class="screenshots-label">Screenshots</div>
+                <div class="screenshots-slider">
+                    <div class="ss-track" id="ss-track-3">
+                        <img src="screenshots/tool1.png" alt="Screenshot 1" class="ss-img">
+                        <img src="screenshots/tool2.png" alt="Screenshot 2" class="ss-img">
+                    </div>
+                    <button class="ss-prev" onclick="slideScreenshot('ss-track-3',-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button class="ss-next" onclick="slideScreenshot('ss-track-3', 1)"><i class="fas fa-chevron-right"></i></button>
+                    <div class="ss-dots" id="ss-dots-3"></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -309,15 +345,15 @@
                 </a>
                 <div class="contact-divider"></div>
                 <div class="social-row">
-                    <a href="#" class="social-btn" aria-label="GitHub">
+                    <a href="https://github.com/AtomXHarshYT" class="social-btn" aria-label="GitHub">
                         <i class="fab fa-github"></i>
                         <span>GitHub</span>
                     </a>
-                    <a href="#" class="social-btn" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/harshsinh-rathod-1a93a921b/" class="social-btn" aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                         <span>LinkedIn</span>
                     </a>
-                    <a href="#" class="social-btn" aria-label="Instagram">
+                    <a href="https://www.instagram.com/harshsinh_1306?igsh=NTc4MTIwNjQ2YQ==" class="social-btn" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                         <span>Instagram</span>
                     </a>
@@ -523,6 +559,34 @@
             document.body.style.position = '';
             document.body.style.width = '';
         }
+    });
+
+    /* ─── SCREENSHOT SLIDER ─── */
+    function slideScreenshot(trackId, dir) {
+        const track = document.getElementById(trackId);
+        const imgs = track.querySelectorAll('.ss-img');
+        const total = imgs.length;
+        let current = parseInt(track.dataset.current || 0);
+        current = (current + dir + total) % total;
+        track.dataset.current = current;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        const dotContainer = document.getElementById(trackId.replace('ss-track', 'ss-dots'));
+        dotContainer.querySelectorAll('.ss-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    document.querySelectorAll('.ss-track').forEach(track => {
+        const imgs = track.querySelectorAll('.ss-img');
+        track.dataset.current = 0;
+        const dotContainer = document.getElementById(track.id.replace('ss-track', 'ss-dots'));
+        imgs.forEach((_, i) => {
+            const dot = document.createElement('span');
+            dot.className = 'ss-dot' + (i === 0 ? ' active' : '');
+            dot.onclick = () => {
+                track.dataset.current = i - 1;
+                slideScreenshot(track.id, 1);
+            };
+            dotContainer.appendChild(dot);
+        });
     });
 
     /* ─── GLITCH TEXT ─── */
