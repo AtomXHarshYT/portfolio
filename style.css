@@ -28,7 +28,7 @@
 }
 
 /* ─── BASE ─── */
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 
 body {
     font-family: var(--font-body);
@@ -225,7 +225,8 @@ a:hover, button:hover, .project-card:hover {
     z-index: 1;
 }
 
-.hero-orbs { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.hero-orbs { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+
 .orb {
     position: absolute;
     border-radius: 50%;
@@ -291,7 +292,7 @@ a:hover, button:hover, .project-card:hover {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 960px;
+    max-width: min(960px, 100%);
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 1.2s var(--transition), transform 1.2s var(--transition);
@@ -395,7 +396,7 @@ a:hover, button:hover, .project-card:hover {
     color: var(--muted);
     line-height: 1.7;
     margin-bottom: 44px;
-    max-width: 560px;
+    max-width: min(560px, 100%);
     margin-left: auto;
     margin-right: auto;
 }
@@ -906,8 +907,8 @@ a:hover, button:hover, .project-card:hover {
 }
 .contact-orb {
     position: absolute;
-    width: 600px;
-    height: 600px;
+    width: min(600px, 100vw);
+    height: min(600px, 100vw);
     left: 50%;
     top: 50%;
     translate: -50% -50%;
